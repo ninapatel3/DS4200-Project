@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    border: 3px solid #0A192F;
+    background-color: #E3F2FD;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #2878be;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #0A192F;
+    text-align: center;
+}
+
+section h2 {
+    color: #2C3E50;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td, .tg th {
+    border: 1px solid #0A192F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 12px 8px;
+    text-align: left;
+}
+
+.tg th {
+    background-color: #2878be;
+    font-weight: 600;
+}
+
+.tg .tg-0lax {
+    vertical-align: top;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.container {
+    display: flex;
+}
+
+.image {
+    flex: 0 0 65%;
+}
+
+.text {
+    flex: 2;
+    font-size: 14px;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+section ul {
+    text-align: left;
+    display: inline-block;
+}
+
+section ul li img {
+    display: block;
+    width: 100%;
+    max-width: 300px; 
+    border-radius: 8px;
+}

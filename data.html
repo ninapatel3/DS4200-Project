@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Student School Stat Analysis </h1>
+        <nav>
+            <a href="index.html">Introduction</a>
+            <a href="data.html">Data</a>
+            <a href="summary.html">Summary</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Data Analysis</h1>
+        <section>
+            <h2> GPA Distribution </h2>
+            <p>
+                To begin we started with a  histogram displaying the distribution of GPA to get an overview of academic 
+                performance among the students in the dataset. The distribution appears to be mainly normal, and most 
+                students have GPAs centered between 1.5 and 3.0, with fewer students at the very low or very high ends 
+                of the spectrum. This bell-shaped curve suggests that the dataset represents a typical academic population, 
+                where a majority of students perform around the average, and extreme outcomes are relatively rare. 
+                Understanding that this dataset represents a well rounded range of the population helps us to make overall 
+                conclusions about the data. 
+            </p>
+                <div class = 'center'>
+                    <iframe src="gpa_distribution.png" width="100%" height="450px" frameborder="0"></iframe>
+                </div>
+        </section>
+
+        <section>
+            <h2> Study Time vs. GPA </h2>
+            <div class = 'container'>
+                <div class = 'image'>
+                    <iframe src="altair_scatter.html" width="100%" height="400px" frameborder="0"></iframe>
+                </div>
+                <div class = 'text'>
+                    <p>
+                        This scatter plot examines the relationship between students' weekly study time and their GPA, 
+                        with tutoring status represented through color (blue representing having been tutored).
+                        Overall, the data reveals a very weak linear relationship between study time and GPA. Students across all 
+                        study time levels display a wide range of GPAs, from low to high, suggesting that simply studying 
+                        more hours does not necessarily predict stronger academic performance.
+                    </p>
+                </div>            
+            </div>
+
+            <p>Additionally, while there appears to be a slight concentration of higher GPAs among students with tutoring (orange), the 
+                overlap between tutored and non-tutored students remains visually substantial. This indicated 
+                to us that while tutoring may play a role in performance, it is likely not the sole determining 
+                factor.</p>
+        </section>
+
+        <section>
+            <h2>Bar Chart: Average GPA by Parental Education</h2>
+            <p>
+                We next wanted to explore the average GPA of students based on their parents’ level of education, ranging 
+                from no formal education to higher education. Surprisingly, the chart reveals minimal variation in GPA 
+                across all education levels. Students whose parents completed college or higher education do not appear 
+                to have significantly higher GPAs than those whose parents did not complete high school. In fact, students 
+                with parents who only completed high school or some college show slightly higher GPAs on average. This 
+                challenges common assumptions about the direct influence of parental education and suggests that other 
+                variables may play a more important  role in academic performance.
+            </p>
+                <div class='center'>
+                    <iframe src="d3_chart.html" width="100%" height="500px" frameborder="0"></iframe>
+                </div>
+
+        </section>
+
+        <section>
+            <h2>Sankey Diagram: Parental Education -> Tutoring -> Grade Class</h2>
+            <p>
+                Continuing our exploration of parental education level effect on GPA, this Sankey diagram traces the 
+                pathway from parental education levels through tutoring status to students’ grade classifications, 
+                offering a layered look at how background and support factors might influence academic outcomes. One 
+                notable observation is that a large number of students from lower to mid-level parental education 
+                groups  do not receive tutoring, and a substantial portion of those students end up in the lower grade 
+                categories. In contrast, students who do receive tutoring are more evenly distributed across all grade 
+                levels, with some representation in the higher performance bands. While the diagram doesn’t show a direct 
+                cause-effect relationship, it highlights how tutoring is a strong support mechanism for students, potentially 
+                improving outcomes regardless of parental education level.
+            </p>
+                <div class='center'>
+                    <iframe src="sankey.html" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
+        </section>
+
+        <section>
+            <h2> Correlation Heatmap </h2>
+            <div class = 'container'>
+                <div class = 'image'>
+                    <iframe src="heatmap.html" width="600px" height="380px" frameborder="0"></iframe>
+                </div>
+                <div class = 'text'>
+                    <p>
+                        This visualization, a correlation heatmap reveals the strength and direction of linear relationships between key 
+                        continuous variables: Age, Study Time, Absences, and GPA. An important observation is the strong negative correlation 
+                        between Absences and GPA (-0.91), indicating that students with more absences tend to have significantly lower GPAs.
+                    </p>
+                </div>            
+            </div>
+            <p>
+                Not surprisingly, there is a weak positive correlation between Study Time and GPA (0.18), suggesting that studying more 
+                may have a small positive impact on academic performance, something we observed in the earlier scatter plot. Age appears 
+                to have no meaningful relationship with any of the other variables. Overall, the heatmap emphasizes that school attendance 
+                is a more critical factor in GPA than either age or weekly study time alone.
+            </p>
+        </section>
+
+        <section>
+            <h2>Parallel Coordinates Plot</h2>
+            <p>
+                Takeaway: The parallel coordinates plot visualizes how multiple continuous variables, Age, Study Time, Absences, and GPA, interact on an individual student level. A key pattern that emerges is the relationship between Absences and GPA: students with low absences (near 0) tend to have higher GPAs, while those with more absences cluster around lower GPA values. Study time shows some positive variation, with a number of students who study more hours per week trending toward higher GPA values. Age, however, appears to have little variation in GPA, consistent with earlier findings. This plot reinforces the idea that attendance is a major contributor to academic performance.
+            </p>
+            <p>
+                Design Idea: A parallel coordinate plot was selected to display multi-dimensional relationships between continuous variables for each student. Each line represents a student, and the line’s path across each vertical axis shows their value for each variable. By coloring the lines based on GPA using a gradient, the visualization allows viewers to detect patterns across variables and see which traits are commonly associated with higher or lower academic performance. This design is especially useful for identifying complex interactions and trends that wouldn’t be visible in simple two-variable plots.
+            </p>
+                <div class='center'>
+                    <iframe src="parallel_coordinates.png" width="100%" height="500px" frameborder="0"></iframe>
+                </div>
+        </section>
+    </main>
+</body>
+</html>
